@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SessionController@index')->name('home.index');
+Route::post('/session', 'SessionController@new')->name('session.new');
+Route::get('/session/observe/{session}', 'SessionController@observe')->name('session.observe');
+Route::get('/session/play/{session}', 'SessionController@join')->name('session.play');
