@@ -37,8 +37,8 @@
 
         mounted() {
             // Listen for the 'NewBlogPost' event in the 'team.1' private channel
-            this.$echo.channel('ZETTA').listen(EVENT_PLAYER_JOINED, (payload) => {
-                console.log(payload);
+            this.$echo.channel('ZETTA').listen(EVENT_PLAYER_JOINED, ({ player }) => {
+                this.$store.commit('addPlayer', player);
             });
         },
 

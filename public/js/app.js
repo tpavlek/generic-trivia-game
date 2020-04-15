@@ -1976,9 +1976,13 @@ var EVENT_PLAYER_JOINED = 'player-joined';
     this.$store.commit('joinSession', this.sessionId);
   },
   mounted: function mounted() {
+    var _this = this;
+
     // Listen for the 'NewBlogPost' event in the 'team.1' private channel
-    this.$echo.channel('ZETTA').listen(EVENT_PLAYER_JOINED, function (payload) {
-      console.log(payload);
+    this.$echo.channel('ZETTA').listen(EVENT_PLAYER_JOINED, function (_ref) {
+      var player = _ref.player;
+
+      _this.$store.commit('addPlayer', player);
     });
   },
   data: function data() {
