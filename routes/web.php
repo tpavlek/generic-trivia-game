@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'SessionController@index')->name('home.index');
 Route::post('/session', 'SessionController@new')->name('session.new');
-Route::get('/session/observe/{session}', 'SessionController@observe')->name('session.observe');
-Route::get('/session/play/{session}', 'SessionController@join')->name('session.play');
+Route::get('/session/{session}/observe', 'SessionController@observe')->name('session.observe');
+Route::get('/session/{session}/play', 'SessionController@join')->name('session.play');
+
+Route::post('/session/{session}/buzzer', 'BuzzerController@buzz')->name('buzzer.buzz');

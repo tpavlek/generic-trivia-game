@@ -17,6 +17,10 @@ class CreateGamesTable extends Migration
             $table->unsignedBigInteger('id');
             $table->primary('id');
 
+            $table->string('state');
+
+            $table->boolean('is_double_jeopardy')->default(false);
+
             $table->date('date');
 
             $table->timestamps();
