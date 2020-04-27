@@ -2,4 +2,11 @@
 
 @tailwind components;
 
+.text-shadow-lg {
+    text-shadow: 1vh 1vh black;
+}
+.text-shadow-sm {
+    text-shadow: 0.75vh 0.75vh black;
+}
+
 @tailwind utilities;

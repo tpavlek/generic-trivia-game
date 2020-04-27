@@ -11,12 +11,22 @@
                 </ul>
             </div>
         </div>
+
+        <div v-if="isDisplayingClues">
+            <clue-board></clue-board>
+        </div>
+
+        <div v-if="isShowingClue">
+            <clue-show></clue-show>
+        </div>
     </div>
 
 </template>
 
 <script>
     const STATE_WAITING_FOR_PLAYERS = 'players-joining';
+    const STATE_DISPLAYING_CLUES = 'displaying-clues';
+    const STATE_CLUE_SELECTED = 'clue-selected';
 
     const EVENT_PLAYER_JOINED = 'player-joined';
 
@@ -44,7 +54,7 @@
 
         data() {
             return {
-                state: STATE_WAITING_FOR_PLAYERS,
+                state: STATE_CLUE_SELECTED,
             }
         },
 
@@ -52,7 +62,15 @@
             ...mapState([ 'players', 'categories' ]),
             isWaitingForPlayersToJoin()
             {
-                return this.state
+                return this.state === STATE_WAITING_FOR_PLAYERS;
+            },
+            isDisplayingClues()
+            {
+                return this.state === STATE_DISPLAYING_CLUES;
+            },
+            isShowingClue()
+            {
+                return this.state === STATE_CLUE_SELECTED;
             }
         }
 

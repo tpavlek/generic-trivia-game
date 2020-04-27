@@ -21,10 +21,13 @@
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "vue-text-to-speech": "^1.0.6"
     },
     "dependencies": {
         "tailwindcss": "^1.2.0",
+        "vue-anime": "^1.0.0",
+        "vue-animejs": "^2.1.1",
         "vue-echo": "^1.0.2",
         "vuex": "^3.1.3"
     }

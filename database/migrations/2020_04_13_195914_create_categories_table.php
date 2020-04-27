@@ -22,7 +22,7 @@ class CreateCategoriesTable extends Migration
             $table->boolean('double_jeopardy')->default(false);
 
             $table->unsignedBigInteger('game_id');
-            $table->foreign('game_id')->references('id')->on('games');
+            $table->foreign('game_id')->references('id')->on('games')->cascadeOnDelete();
 
             $table->timestamps();
         });

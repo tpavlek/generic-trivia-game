@@ -35,6 +35,6 @@ class CreatePlayerSessionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('player_sessions');
+        Schema::dropIfExists('player_session');
     }
 }

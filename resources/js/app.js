@@ -29,7 +29,9 @@ let EchoInstance = new Echo({
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueEcho from 'vue-echo';
+import VueAnime from 'vue-animejs';
 
+Vue.use(VueAnime);
 Vue.use(Vuex);
 Vue.use(VueEcho, EchoInstance);
 

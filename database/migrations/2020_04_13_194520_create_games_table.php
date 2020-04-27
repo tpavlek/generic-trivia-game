@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->unsignedBigInteger('id');
             $table->primary('id');
 
-            $table->string('state');
+            $table->string('state')->default(\App\Game::STATE_SHOWING_BOARD);
 
             $table->boolean('is_double_jeopardy')->default(false);
 

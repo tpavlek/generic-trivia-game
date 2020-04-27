@@ -23,7 +23,7 @@ class CreateCluesTable extends Migration
             $table->boolean('is_daily_double')->default(false);
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
 
 
             $table->timestamps();

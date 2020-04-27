@@ -21,7 +21,7 @@ class CreateFinalCluesTable extends Migration
             $table->string('answer');
 
             $table->unsignedBigInteger('game_id');
-            $table->foreign('game_id')->references('id')->on('games');
+            $table->foreign('game_id')->references('id')->on('games')->cascadeOnDelete();
 
             $table->timestamps();
         });
